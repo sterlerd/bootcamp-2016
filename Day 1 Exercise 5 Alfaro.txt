@@ -1,0 +1,71 @@
+> #More fun with loops. Here are the bank accounts from seven randomly selected UCLA grad students
+> #Attempt 1
+> 
+> bankAccounts <- c(10, 9.2, 5.6, 3.7, 8.8, 0.5)
+> bankAccounts
+[1] 10.0  9.2  5.6  3.7  8.8  0.5
+> interestRate <- 0.0125
+> interestRate
+[1] 0.0125
+> for(i in 1:length(bankAccount)){
++ compounded[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
++ }
+Error: object 'bankAccount' not found
+> 
+>
+>
+> #Fixing syntax error in my for-loop
+> for(i in 1:length(bankAccounts)){
++ compounded[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
++ }
+Error in compounded[i] <- interestRate * bankAccounts[i] + bankAccounts[i] : 
+  object 'compounded' not found
+> 
+>
+>
+> #Trying to understand each piece and what it looks like
+> interestRate*bankAccounts
+[1] 0.12500 0.11500 0.07000 0.04625 0.11000 0.00625
+> interestRate*bankAccounts + bankAccounts
+[1] 10.12500  9.31500  5.67000  3.74625  8.91000  0.50625
+> compounded <- interestRate*bankAccounts + bankAccounts
+> compounded
+[1] 10.12500  9.31500  5.67000  3.74625  8.91000  0.50625
+> 
+> 
+>
+> #Attempt 2 trying to use the rep function and understand it
+> interestRate
+[1] 0.0125
+> bankAccounts
+[1] 10.0  9.2  5.6  3.7  8.8  0.5
+> compounded <- rep(0, length(bankAccounts))
+> compounded
+[1] 0 0 0 0 0 0
+> 
+> for(i in 1:length(bankAccounts)){
++ compounded[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
++ }
+> compounded
+[1] 10.12500  9.31500  5.67000  3.74625  8.91000  0.50625
+> 
+>
+>
+> #Attempt 4 using NA instead of 0 in my rep function
+> compounded <- rep(NA, length(bankAccounts))
+> compounded
+[1] NA NA NA NA NA NA
+> 
+> for(i in 1:length(bankAccounts)){
++ compounded[i] <- interestRate*bankAccounts[i] + bankAccounts[i]
++ print(compounded)
++ }
+[1] 10.125     NA     NA     NA     NA     NA
+[1] 10.125  9.315     NA     NA     NA     NA
+[1] 10.125  9.315  5.670     NA     NA     NA
+[1] 10.12500  9.31500  5.67000  3.74625       NA       NA
+[1] 10.12500  9.31500  5.67000  3.74625  8.91000       NA
+[1] 10.12500  9.31500  5.67000  3.74625  8.91000  0.50625
+> 
+> 
+> #Attempts 3 and 4 produced the same numbers but using a different format. I am not sure why.

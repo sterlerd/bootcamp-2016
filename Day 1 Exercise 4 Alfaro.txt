@@ -1,0 +1,43 @@
+> for(ii in 1:length(years)){
++     if(years[ii] %% 2 == 0){
++         cat(years[ii], 'Hooray, congressional elections!', sep = '\t', fill = T)
++     }
++ 
++ }
+Error: object 'years' not found
+> years <- c(2015, 2016, 2018, 2020, 2021)
+> for(ii in 1:length(years)){
++ if(years[ii] %% 2 == 0){
++ cat(years[ii], 'Hooray, congressional elections!', sep = '\t', fill = T)
++ cat(years[ii], 'Hooray, presidential elections!', sep = '\t', fill = T)
++ }
++ }
+2016	Hooray, congressional elections!
+2016	Hooray, presidential elections!
+2018	Hooray, congressional elections!
+2018	Hooray, presidential elections!
+2020	Hooray, congressional elections!
+2020	Hooray, presidential elections!
+> years
+[1] 2015 2016 2018 2020 2021
+> for(ii in 1:length(years)){
++ if years[ii] %% == 0{
+Error: unexpected symbol in:
+"for(ii in 1:length(years)){
+if years"
+> 
+> 
+> #Attempt number 3
+> for(ii in 1:length(years)){
++ if(years[ii] %% 2 == 0){
++ cat(years[ii], 'Hooray, congressional elections!', sep ='\t', fill = T)
++ }
++ if(years[ii] %% 4 == 0){
++ cat(years[ii], 'Hooray, presidential elections!', sep ='\t', fill = T)
++ }
++ }
+2016	Hooray, congressional elections!
+2016	Hooray, presidential elections!
+2018	Hooray, congressional elections!
+2020	Hooray, congressional elections!
+2020	Hooray, presidential elections!
